@@ -1,5 +1,5 @@
 <div style="height:60px;"></div>
-<div class="hot_offers"><%= image_tag "hot_offers.jpg" %></div>
+<div class="hot_offers"><%= image_tag "hot_offers.jpg", :style => "width: 100%;" %></div>
 <div class="places_nearby_heading">Places Nearby</div>
 <table class="nearby_places_list">
   <% @response["places"].each do |p| %>
