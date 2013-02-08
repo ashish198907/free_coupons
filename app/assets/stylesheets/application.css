@@ -123,9 +123,11 @@ font-style: italic;
 }
 
 .container {
-    float:left;
-    width: 480px;
-    height: 800px;
+    width: 100%;
+}
+
+.hot_offers {
+    text-align: center;
 }
 
 .places_nearby_heading {
