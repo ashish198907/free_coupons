@@ -1,0 +1,28 @@
+<div style="height:60px;"></div>
+<div class="hot_offers"><%= image_tag "hot_offers.jpg" %></div>
+<div class="places_nearby_heading">Places Nearby</div>
+<table class="nearby_places_list">
+  <% @response["places"].each do |p| %>
+  <tr>
+    <td align="middle" width="15%">
+      <div class="category_image_div">
+        <%= image_tag p["image_url"] %>
+      </div>
+    </td>
+    <td width="60%">
+      <div class="place_name_div">
+        <div class="place_name"><%= p["name"] %></div>
+        <div class="location"><%= image_tag "location_icon.jpg", :class => "location_icon" %><%= p["locality"] %></div>
+      </div>
+    </td>
+    <td align="middle">
+      <div class="place_distance_div">
+        <div class="distance"><%= p["distance"].round(1) %> km</div>
+        <% if p["offer_id"].present? %>
+            <div><%= image_tag "offer_icon.jpg", :class => "offer_icon" %></div>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+      <% end %>
+</table>
