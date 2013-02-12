@@ -18,10 +18,10 @@ FreeCoupons::Application.routes.draw do
   match '/search' => 'home#search', :as => :search
   match '/public_profile' => 'home#public_profile', :as => :public_profile
   match '/friend_public_profile' => 'home#friend_public_profile', :as => :friend_public_profile
-  match '/checkin' => 'home#checkin', :as => :checkin
+  match '/checkin/:place_id' => 'home#checkin', :as => :checkin
   match '/add_a_place' => 'home#add_a_place', :as => :add_a_place
   match '/logout' => 'home#logout', :as => :logout
-  match '/place_detail' => 'home#place_detail', :as => :place_detail
+  match '/place_detail/:place_id' => 'home#place_detail', :as => :place_detail
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
