@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42d8eb86-b3cb-44e8-90ec-ef0749c8d1fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/nearby_places.html.erb" afterPath="$PROJECT_DIR$/app/views/home/nearby_places.html.erb" />
-    </list>
+    <list default="true" id="42d8eb86-b3cb-44e8-90ec-ef0749c8d1fb" name="Default" comment="" />
     <ignored path="free_coupons.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +40,7 @@
       <file leaf-file-name="nearby_places.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/nearby_places.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="79" selection-start="112" selection-end="112" vertical-scroll-proportion="0.02636204">
+            <state line="27" column="8" selection-start="978" selection-end="978" vertical-scroll-proportion="0.71177506">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -544,7 +542,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/nearby_places.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="79" selection-start="112" selection-end="112" vertical-scroll-proportion="0.02636204">
+        <state line="27" column="8" selection-start="978" selection-end="978" vertical-scroll-proportion="0.71177506">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>

@@ -1,28 +1,31 @@
-<div style="height:60px;"></div>
-<div class="hot_offers"><%= image_tag "hot_offers.jpg", :style => "width: 100%;" %></div>
-<div class="places_nearby_heading">Places Nearby</div>
-<table class="nearby_places_list">
-  <% @response["places"].each do |p| %>
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#f6F5F3" id="header">
   <tr>
-    <td align="middle" width="15%">
-      <div class="category_image_div">
-        <%= image_tag p["image_url"] %>
-      </div>
-    </td>
-    <td width="60%">
-      <div class="place_name_div">
-        <div class="place_name"><%= p["name"] %></div>
-        <div class="location"><%= image_tag "location_icon.jpg", :class => "location_icon" %><%= p["locality"] %></div>
-      </div>
-    </td>
-    <td align="middle">
-      <div class="place_distance_div">
-        <div class="distance"><%= p["distance"].round(1) %> km</div>
-        <% if p["offer_id"].present? %>
-            <div><%= image_tag "offer_icon.jpg", :class => "offer_icon" %></div>
-        <% end %>
-      </div>
+    <td><%= image_tag "cafe-coffee-day.png" %></td>
+    <td><%= image_tag "couch.png" %></td>
+  </tr>
+  <tr bgcolor="#dddddd" >
+    <td colspan="2" class="headingfont" style="border-bottom: 4px solid #d9d9d9;border-top: 4px solid #d9d9d9;padding-left:30px;padding-top:5px;padding-bottom:5px;">
+      <b>Places Nearby</b>
     </td>
   </tr>
-      <% end %>
+  <% @response["places"].each do |p| %>
+      <tr>
+        <td colspan="2" style="border-bottom: 2px solid #e7e6e4">
+          <a href="/place_detail">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td align="left"  style="padding-left:30px;padding-top:10px;padding-bottom:10px;" width="25%"><%= image_tag "airport.png" %></td>
+              <td align="left" style="padding-bottom:10px;">
+                <div class="placed" style="padding-top:10px;"><b><%= p['name'] %></b></div>
+                <div align="absmiddel"  class="placed"><%= image_tag "place-icon.png" %>&nbsp;&nbsp;<%= p['locality'] %></div>
+              </td>
+              <td class="placed" align="center" width="15%">
+                <b><%= p["distance"].round(1) %> Km</b>
+              </td>
+            </tr>
+          </table>
+          </a>
+        </td>
+      </tr>
+  <% end %>
 </table>

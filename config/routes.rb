@@ -9,7 +9,19 @@ FreeCoupons::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match '/login' => 'home#login', :as => :login
+  match '/mobile_number_verification' => 'home#mobile_number_verification', :as => :mobile_number_verification
+  match '/profile' => 'home#profile', :as => :profile
+  match '/update_profile' => 'home#update_profile', :as => :update_profile
+  match '/checkin_history' => 'home#checkin_history', :as => :checkin_history
   match '/nearby_places' => 'home#nearby_places', :as => :nearby_places
+  match '/search' => 'home#search', :as => :search
+  match '/public_profile' => 'home#public_profile', :as => :public_profile
+  match '/friend_public_profile' => 'home#friend_public_profile', :as => :friend_public_profile
+  match '/checkin' => 'home#checkin', :as => :checkin
+  match '/add_a_place' => 'home#add_a_place', :as => :add_a_place
+  match '/logout' => 'home#logout', :as => :logout
+  match '/place_detail' => 'home#place_detail', :as => :place_detail
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -49,7 +61,7 @@ FreeCoupons::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'home#nearby_places'
 
   # See how all your routes lay out with "rake routes"
 

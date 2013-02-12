@@ -1,0 +1,25 @@
+<table>
+  <% @response['search_results'].each do |history| %>
+      <% history.each do |k,v| %>
+          <tr>
+            <td><%= k.gsub("_"," ") %></td>
+            <td><%= v %></td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>
+<!--<%#= link_to_function "Test", "test()" %>-->
+     <!--<script>-->
+//       function test(){
+//           $.ajax({
+//               url : 'http://app-stg.hoppr.com/login.json',
+//               data :  "mobile_number=918130508119&password=ankit&telco=unknown&key=android",
+//               type: 'GET',
+//               success : function(data){
+//                   alert(data);
+//               }
+//
+//           })
+//       }
+//
+     <!--</script>-->
