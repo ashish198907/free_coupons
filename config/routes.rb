@@ -21,7 +21,8 @@ FreeCoupons::Application.routes.draw do
   match '/checkin/:place_id' => 'home#checkin', :as => :checkin
   match '/add_a_place' => 'home#add_a_place', :as => :add_a_place
   match '/logout' => 'home#logout', :as => :logout
-  match '/place_detail/:place_id' => 'home#place_detail', :as => :place_detail
+  #match '/place_detail/:place_id' => 'home#place_detail', :as => :place_detail
+  match '/place_detail' => 'home#place_detail', :as => :place_detail
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -61,7 +62,7 @@ FreeCoupons::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#nearby_places'
+  root :to => 'home#login'
 
   # See how all your routes lay out with "rake routes"
 
