@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def login
-    @result = Typhoeus::Request.post("http://app-stg.hoppr.com/app/login.json", :params => {"mobile_number" => "918130508119", "password" => "ankit", "telco" => "unknown", "key" => "ios"})
+    @result = Typhoeus::Request.post("http://app-stg.hoppr.com/app/login.json", :params => {"mobile_number" => "919050513165", "password" => "ashish", "telco" => "unknown", "key" => "ios"})
     @response = JSON.parse(@result.body)
     $redis.set('session_id',@response["session_id"])
     redirect_to nearby_places_path
