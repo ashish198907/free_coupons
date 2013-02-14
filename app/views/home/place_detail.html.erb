@@ -16,7 +16,7 @@
     </td>
   </tr>
   <tr>
-    <td align="center"><img src="/assets/placeimage.jpg" width="100%"></td>
+    <td align="center"><img src="http://images.hoppr.com/image-service/?id=<%= params[:place_id] %>&size=carousel" width="100%"></td>
   </tr>
   <tr>
     <td colspan="2" align="center" style="padding:15px;" bgcolor="#ffffff">
@@ -32,14 +32,16 @@
   <tr><td colspan="2" style="border-bottom:2px solid #cac9c5;"></td></tr>
   <tr>
     <td colspan="2"   align="center" style="padding:15px;" bgcolor="#ffffff">
+      <% if @response2.present? %>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td   align="left"  width="10%" style="padding:12px;"><img src="/assets/tag-icon.png"></td>
-          <td   align="left"  class="coupontext" style="padding:12px;"><b>Check in today to win a free coupon Buy medium pizza, get regular free </b> </td>
-
-
+          <td   align="left"  class="coupontext" style="padding:12px;"><b>
+            <%= @response2['description'] %>
+          </b> </td>
         </tr>
       </table>
+      <% end %>
     </td>
   </tr>
 
@@ -51,41 +53,43 @@
 
   <tr>
     <td colspan="2" >
+      <% if @response1.present? %>
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td align="left" style="padding-left:15px;padding-top:12px;padding-bottom:12px;" width="25%"><div><img src="/assets/skippr-icon.png">
           </div><div class="headingfont"><b>Skippr</b></div>
           </td>
           <td align="left" style="padding-bottom:10px;">
-            <div align="absmiddel"  ><img src= "/assets/skippr-_img.png"></div>
-
+            <div align="absmiddel"  >
+              <img src= "<%= @response1['skippr']['image_url'] %>" />
+            </div>
           </td>
-
         </tr>
         <tr><td colspan="2" style="border-bottom:2px solid #cac9c5;">&nbsp;</td></tr>
-
         <tr>
           <td align="left" style="padding-left:15px;padding-top:18px;padding-bottom:12px;" width="25%"><div><img src="/assets/chasr-icon.png">
-          </div><div class="headingfont"><b>Chasr</b></div>
-
+            </div><div class="headingfont"><b>Chasr</b></div>
           </td>
           <td align="left" style="padding-bottom:10px;">
-            <div align="absmiddel"  ><img src= "/assets/user.png"></div>
-
+            <div align="absmiddel"  >
+              <% @response1['chasers'].each do |chaser| %>
+                <img src= "/assets/user.png">
+              <% end %>
+            </div>
           </td>
-
         </tr>
         <tr><td colspan="2" style="border-bottom:2px solid #cac9c5;">&nbsp;</td></tr>
         <tr >
           <td align="left" style="padding-left:15px;padding-top:18px;padding-bottom:18px;" width="25%"><div><img src="/assets/hope-icon.png">							</div><div class="headingfont"><b>hopprs</b></div>
           </td>
           <td align="left" style="padding-bottom:10px;">
-            <div align="absmiddel"  ><img src= "/assets/hoppr_img-1.png">&nbsp;<img src= "/assets/hoppr_img-2.png"></div>
-
+            <div align="absmiddel"  >
+              <img src= "/assets/hoppr_img-1.png">&nbsp;<img src= "/assets/hoppr_img-2.png">
+            </div>
           </td>
-
         </tr>
       </table>
+      <% end %>
     </td>
   </tr>
 

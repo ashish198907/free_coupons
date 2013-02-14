@@ -11,10 +11,20 @@
   </tr>
   <tr><td>
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f6F5F3" id="header" width="100%">
-      <tr>
-        <td><img src="assets/cafe-coffee-day.png" border="0" width="100%"></td>
-        <td><img src="assets/couch.png"  border="0" width="100%"></td>
-      </tr>
+      <% if @response['featured_places'].present? %>
+          <tr>
+            <td width="50%">
+              <a href="<%= place_detail_path(:place_id => @response['featured_places'][0]['place_id'],:offer_id => @response['featured_places'][0]['offer_id'])%>">
+                <img src="<%= @response['featured_places'][0]['image_url']%>" border="0" width="100%" />
+              </a>
+            </td>
+            <td width="50%">
+              <a href="<%= place_detail_path(:place_id => @response['featured_places'][1]['place_id'],:offer_id => @response['featured_places'][1]['offer_id'])%>">
+                <img src="<%= @response['featured_places'][1]['image_url']%>" border="0" width="100%" />
+              </a>
+            </td>
+          </tr>
+      <% end %>
       <tr bgcolor="#dddddd" >
         <td colspan="2" class="headingfont" bgcolor="#dddddd" style="border-bottom: 4px solid #d9d9d9;border-top: 4px solid #d9d9d9;padding-left:15px;padding-top:5px;padding-bottom:5px;">
           <b>Places Nearby</b>
@@ -23,7 +33,7 @@
   <% @response["places"].each do |p| %>
       <tr>
         <td colspan="2" style="border-bottom: 2px solid #e7e6e4">
-          <a href="<%= place_detail_path(:place_id => p['place_id'],:offer_id => p["offer_id"])%>">
+          <a href="<%= place_detail_path(:place_id => p['place_id'],:offer_id => p['offer_id'])%>">
           <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tr>
               <td align="left"  style="padding-left:30px;padding-top:10px;padding-bottom:10px;" width="25%"><%= image_tag choose_category_image(p["category"]) %></td>

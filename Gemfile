@@ -23,6 +23,7 @@ gem 'typhoeus'
 gem 'jquery-rails'
 gem 'thin'
 gem 'redis', '2.1.1'
+gem 'yajl-ruby'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
