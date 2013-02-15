@@ -10,18 +10,9 @@ FreeCoupons::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
   match '/login' => 'home#login', :as => :login
-  match '/mobile_number_verification' => 'home#mobile_number_verification', :as => :mobile_number_verification
-  match '/profile' => 'home#profile', :as => :profile
-  match '/update_profile' => 'home#update_profile', :as => :update_profile
-  match '/checkin_history' => 'home#checkin_history', :as => :checkin_history
   match '/nearby_places' => 'home#nearby_places', :as => :nearby_places
-  match '/search' => 'home#search', :as => :search
-  match '/public_profile' => 'home#public_profile', :as => :public_profile
-  match '/friend_public_profile' => 'home#friend_public_profile', :as => :friend_public_profile
   match '/checkin/:place_id' => 'home#checkin', :as => :checkin
-  match '/add_a_place' => 'home#add_a_place', :as => :add_a_place
-  match '/logout' => 'home#logout', :as => :logout
-  #match '/place_detail/:place_id' => 'home#place_detail', :as => :place_detail
+  match '/rate_place' => 'home#rate_place', :as => :rate_place
   match '/place_detail' => 'home#place_detail', :as => :place_detail
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

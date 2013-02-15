@@ -23,8 +23,7 @@
       <table cellpadding="0" cellspacing="0" border="0" width="100%" >
         <tr>
           <td   align="left"  class="coupontext" style="padding:12px;"><%= @response["address"] %> </td>
-          <td   align="left" style="padding:12px;"><img src="/assets/like-_btn.png"><div class="place_like_count"><%= @response['total_love'] %></div></td>
-
+          <td   align="left" style="padding:12px;"><a href="<%= rate_place_path({:place_id => params[:place_id],:love => (@response['user_love'] == 1 ? '0' : '1')})%>" ><img src="<%= @response['user_love'] == 1 ? '/assets/liked-btn.png' :'/assets/like-_btn.png' %>"><div class="place_like_count"><%= @response['total_love'] %></div></a></td>         </td>
         </tr>
       </table>
     </td>
